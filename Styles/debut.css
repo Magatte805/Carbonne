@@ -1,0 +1,33 @@
+html{
+    padding: 0;
+    margin:0;
+}
+
+header div a{
+  position: relative;
+  padding: auto;
+}
+
+body{
+  background-color: #f0e7cc;
+}
+
+.page-header{
+  display: inline;
+}
+
+#titre{
+    text-align: center;
+    font-weight: bold;
+    color: #063C72;
+}
+
+#images{
+    text-align: center;
+    margin: auto;
+    display: flex;
+    height: 400px;
+    width: 600px;
+}
+
+

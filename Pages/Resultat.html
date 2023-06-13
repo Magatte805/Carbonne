@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat</title>
+    <!-- Liens vers les fichiers CSS et JavaScript nécessaires -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Styles/Resultat.css">
+    <script type="text/javascript" src="../Scripts/Resultat.js" defer></script>
+</head>
+<body>
+    <!-- Votre code HTML existant -->
+
+    <div class="container">
+        <!-- Contenu de la page -->
+
+        <!-- Formulaire d'enregistrement des résultats -->
+        <form id="resultatForm" method="POST" action="resultat.php">
+            <input type="hidden" id="numeriqueInput" name="numerique">
+            <input type="hidden" id="alimentationInput" name="alimentation">
+            <input type="hidden" id="transportInput" name="transport">
+        </form>
+    </div>
+
+    <script>
+        function enregistrerResultats() {
+            // Récupérer les résultats depuis sessionStorage
+            let numerique = sessionStorage.getItem("numérique");
+            let alimentation = sessionStorage.getItem("alimentation");
+            let transport = sessionStorage.getItem("transport");
+
+            // Créer un objet FormData et ajouter les résultats
+            let formData = new FormData();
+            formData.append("numerique", numerique);
+            formData.append("alimentation", alimentation);
+            formData.append("transport", transport);
+
+            // Envoyer la requête POST
+            fetch("resultat.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data); // Afficher la réponse du serveur (facultatif)
+                // Faire quelque chose après l'enregistrement des résultats (redirection, message, etc.)
+            })
+            .catch(error => {
+                console.error("Une erreur s'est produite lors de l'enregistrement des résultats :", error);
+            });
+        }
+
+        // Appeler la fonction pour enregistrer les résultats lors du chargement de la page
+        window.addEventListener("load", enregistrerResultats);
+    </script>
+</body>
+</html>
+
+</html>

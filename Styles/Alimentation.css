@@ -1,0 +1,43 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+.page-header{
+    display: inline;
+}
+
+body{
+    background-color: #f0e7cc;
+}
+
+.fenetre{
+    background-color: #063C72;
+    margin: 30px auto;
+    padding: 20px;
+    width: 70%;
+    min-width: 300px;
+}
+
+section{
+    font-size: 20px;
+}
+
+#bouton_envoi{
+    background-color:  #f0e7cc;
+    border-radius: 12px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+#bouton_envoi:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+h3, p, .thumbnail{
+    background-color: #d1d1d1;
+}
+
+
+  

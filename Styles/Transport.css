@@ -1,0 +1,26 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+.page-header{
+    display: inline;
+}
+
+body{
+    background-color: #f0e7cc;
+}
+
+.fenetre{
+    background-color: #063C72;
+    margin: 30px auto;
+    padding: 20px;
+    width: 70%;
+    min-width: 300px;
+}
+
+
+
+h3, p, .thumbnail{
+    background-color: #d1d1d1;
+}
